@@ -92,8 +92,6 @@ set_target_properties(BlocksRuntime
 	       PUBLIC_HEADER
 	        "src/BlocksRuntime/Block.h;src/BlocksRuntime/Block_private.h")
 
-add_library(BlocksRuntime::BlocksRuntime ALIAS BlocksRuntime)
-
 # Install the library and headers
 # Headers go into BlocksRuntime subdir of the usual include location.
 install(TARGETS BlocksRuntime
@@ -103,6 +101,7 @@ install(TARGETS BlocksRuntime
 # Make it possible to find_package and use this library
 # from the build directory
 export(TARGETS BlocksRuntime
+       NAMESPACE BlocksRuntime::
        FILE cmake/export/BlocksRuntime.cmake)
 
 # Make it possible to use find_package with this library
