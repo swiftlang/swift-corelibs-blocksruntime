@@ -57,10 +57,7 @@ add_library(BlocksRuntime
   src/BlocksRuntime/runtime.c)
 
 if(WIN32)
-  target_sources(BlocksRuntime PRIVATE
-    BlocksRuntime.def)
-
-  if(NOT BUILD_SHARED_LIBS)
+  if (NOT BUILD_SHARED_LIBS)
     target_compile_definitions(BlocksRuntime PUBLIC BlocksRuntime_STATIC)
     target_compile_options(BlocksRuntime PUBLIC
       "$<$<COMPILE_LANGUAGE:C,CXX>:SHELL:$<$<BOOL:${MSVC}>:-Xclang >-static-libclosure>"

@@ -52,13 +52,8 @@ BLOCK_EXPORT void _Block_object_assign(void *, const void *, const int);
 BLOCK_EXPORT void _Block_object_dispose(const void *, const int);
 
 // Used by the compiler. Do not use these variables yourself.
-#if defined(_WIN32)
-extern void * _NSConcreteGlobalBlock[32];
-extern void * _NSConcreteStackBlock[32];
-#else
 BLOCK_EXPORT void * _NSConcreteGlobalBlock[32];
 BLOCK_EXPORT void * _NSConcreteStackBlock[32];
-#endif
 
 #if __cplusplus
 }
